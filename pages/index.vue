@@ -5,11 +5,12 @@ import malalearn_splash from '@/assets/portfolio/malalearn.png'
 import medrec_img from '@/assets/portfolio/medrec.png'
 
 import { useDisplay } from 'vuetify'
+import AppFooter from "~/components/AppFooter.vue";
 
 const {name, smAndDown} = useDisplay()
 
 const languages = ["Rust", "Go", "C#", "Dart", "Python", "Javascript", "Typescript"]
-const frameworks = ["Vue.js", "React.js", "Flutter", "Unity", "Godot", "Raylib", "Avalonia UI", "Blender"]
+const frameworks = ["Vue.js", "React.js", "Flutter", "Unity", "Godot", "Raylib", "Avalonia UI", "Blender", "Node.js"]
 const projects = [
   {
     image: lost_world_img,
@@ -105,8 +106,8 @@ const isSmallScreen = () => {
   </v-app-bar>
 
   <!-- Hero -->
-  <v-container id="hero" class="d-flex align-center justify-center h-50">
-    <div>
+  <v-container id="hero" class="d-flex align-center justify-center min-height-100vh pt-16">
+    <div class="fill-height">
       <div class="d-flex align-center justify-space-around">
         <v-avatar size="200">
           <v-img :src="avatar_img" alt="Timothy Kandiado"></v-img>
@@ -191,7 +192,7 @@ const isSmallScreen = () => {
         <template v-slot:opposite v-if="!smAndDown">
           <span :class="`text-${item.color}`">{{ item.date }}</span>
         </template>
-        <v-card max-width="500" v-ripple>
+        <v-card max-width="400" v-ripple>
           <v-card-title :class="`bg-`+item.color+`-lighten-3`">
             <v-icon class="me-4" :icon="item.purpose_icon"></v-icon>
             <h3 class="font-weight-light">
@@ -213,4 +214,6 @@ const isSmallScreen = () => {
       kandiadotimothy@gmail.com
     </a>
   </v-container>
+
+  <AppFooter />
 </template>

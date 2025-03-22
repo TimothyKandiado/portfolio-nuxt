@@ -4,6 +4,15 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+  app: {
+    head: {
+      title: 'Timothy Kandiado',
+      meta: [
+        { name: 'description', content: 'Timothy Kandiado Software Development Portfolio' }
+      ],
+      link: [{ rel: 'icon', href: '/avatar.jpg' }],
+    },
+  },
 
   build: {
     transpile: ['vuetify'],
